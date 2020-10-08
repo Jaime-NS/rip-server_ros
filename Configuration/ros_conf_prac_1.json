@@ -1,0 +1,50 @@
+{
+   "server": {
+    "host": "127.0.0.1",
+    "port": 8080
+  },
+  "control": {
+    "impl_module": "RIPRos",
+    "info": {
+      "name": "ros_prac_1",
+      "description": "Practice 1: An introduction to ROS",
+      "authors": "J. Nieto",
+      "keywords": "ROS, turtlesim",
+      "model": {
+        "package":"turtlesim",
+        "node":"turtlesim_node",
+        "name":"turtle"
+    },
+
+      "readables": [{
+        "name":"position",
+        "description":"Position of the turtle",
+        "ros": {
+            "type":"topic",
+            "topic":"/turtle1/pose",
+            "msgpackage":"turtlesim.msg",
+            "msgclass":"Pose"
+        },
+        "type":"array",
+        "min":"",
+        "max":"",
+        "precision":""
+      }],
+
+      "writables": [{
+        "name":"movement",
+        "description":"Linear and angular speed of the turtle",
+        "ros": {
+            "type":"topic",
+            "topic":"/turtle1/cmd_vel",
+            "msgpackage":"geometry_msgs.msg",
+            "msgclass":"Twist"
+        },
+        "type":"",
+        "min":"",
+        "max":"",
+        "precision":""
+      }]
+    }
+  }
+}

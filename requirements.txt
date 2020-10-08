@@ -1,0 +1,11 @@
+cherrypy==17.4.2
+numpy==1.16.6
+wheel==0.34.2
+ujson==1.35
+future==0.18.2
+
+# For ROS:
+psutil
+rospkg
+defusedxml
+pyyaml

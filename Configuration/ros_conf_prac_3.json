@@ -1,0 +1,179 @@
+{
+   "server": {
+    "host": "127.0.0.1",
+    "port": 8080
+  },
+  "control": {
+    "impl_module": "RIPRos",
+    "info": {
+      "name": "ros_exp",
+      "description": "A simulation of the turtle tutorial in ROS",
+      "authors": "J. Nieto",
+      "keywords": "ROS, turtlesim",
+      "model": {
+        "package":"turtlesim",
+        "node":"turtlesim_node",
+        "nodename":"turtle"
+    },
+
+
+
+      "readables": [{
+        "name":"position",
+        "description":"Position of the turtle",
+        "ros": {
+            "type":"topic",
+            "topic":"/turtle1/pose",
+            "msgpackage":"turtlesim.msg",
+            "msgclass":"Pose"
+        },
+        "type":"array",
+        "min":"",
+        "max":"",
+        "precision":""
+      },
+      {
+        "name":"color_r",
+        "description":"Red value in background",
+        "ros": {
+            "type":"param",
+            "param":"/turtle/background_r"
+        },
+        "type":"int",
+        "min":"0",
+        "max":"255",
+        "precision":"1"
+      },
+      {
+        "name":"color_g",
+        "description":"Green value in background",
+        "ros": {
+            "type":"param",
+            "param":"/turtle/background_g"
+        },
+        "type":"int",
+        "min":"0",
+        "max":"255",
+        "precision":"1"
+      },
+      {
+        "name":"color_b",
+        "description":"Blue value in background",
+        "ros": {
+            "type":"param",
+            "param":"/turtle/background_b"
+        },
+        "type":"int",
+        "min":"0",
+        "max":"255",
+        "precision":"1"
+      }],
+
+
+
+      "writables": [{
+        "name":"random",
+        "description":"Node that starts random swimming",
+        "ros": {
+            "type":"node",
+            "package":"turtle_random_swimming",
+            "node":"turtle_random_swimming",
+            "nodename":"swim"
+        },
+        "type":"",
+        "min":"",
+        "max":"",
+        "precision":""
+      },
+      {
+        "name":"movement",
+        "description":"Linear and angular speed of the turtle",
+        "ros": {
+            "type":"topic",
+            "topic":"/turtle1/cmd_vel",
+            "msgpackage":"geometry_msgs.msg",
+            "msgclass":"Twist"
+        },
+        "type":"",
+        "min":"",
+        "max":"",
+        "precision":""
+      },
+      {
+        "name":"clear",
+        "description":"Button to clear the path",
+        "ros": {
+            "type":"service",
+            "srv":"clear",
+            "srvpackage":"std_srvs.srv",
+            "srvclass":"Empty"
+        },
+        "type":"",
+        "min":"",
+        "max":"",
+        "precision":""
+      },
+      {
+        "name":"teleport",
+        "description":"Change the turtle to a new position",
+        "ros": {
+            "type":"service",
+            "srv":"/turtle1/teleport_absolute",
+            "srvpackage":"turtlesim.srv",
+            "srvclass":"TeleportAbsolute"
+        },
+        "type":"",
+        "min":"",
+        "max":"",
+        "precision":""
+      },
+      {
+        "name":"color_r",
+        "description":"Red value in background",
+        "ros": {
+            "type":"param",
+            "param":"/turtle/background_r"
+        },
+        "type":"int",
+        "min":"0",
+        "max":"255",
+        "precision":"1"
+      },
+      {
+        "name":"color_g",
+        "description":"Green value in background",
+        "ros": {
+            "type":"param",
+            "param":"/turtle/background_g"
+        },
+        "type":"int",
+        "min":"0",
+        "max":"255",
+        "precision":"1"
+      },
+      {
+        "name":"color_b",
+        "description":"Blue value in background",
+        "ros": {
+            "type":"param",
+            "param":"/turtle/background_b"
+        },
+        "type":"int",
+        "min":"0",
+        "max":"255",
+        "precision":"1"
+      },
+      {
+        "name":"code",
+        "description":"Code to implement",
+        "ros": {
+            "type":"code"
+        },
+        "type":"string",
+        "min":"",
+        "max":"",
+        "precision":""
+      }]
+    }
+  }
+}
